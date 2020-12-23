@@ -81,7 +81,7 @@ class ConfirmComponent extends React.Component<Props, ConfirmState> {
             userData,
             labels,
         } = this.props;
-        const isIdentity = labels.find(w => w.key === 'profile' && w.value === 'verified');
+        const isIdentity = labels.find(w => w.key === 'profile' && (w.value === 'verified' || w.value === 'submitted'));
         const currentProfileLevel = userData.level;
         const cx = classnames('pg-confirm__progress-items', {
             'pg-confirm__progress-first': currentProfileLevel === 1,
@@ -137,7 +137,7 @@ class ConfirmComponent extends React.Component<Props, ConfirmState> {
     private renderContent = () => {
         const { labels } = this.props;
         const { level } = this.state;
-        const isIdentity = labels.find(w => w.key === 'profile' && w.value === 'verified');
+        const isIdentity = labels.find(w => w.key === 'profile' && (w.value === 'verified' || w.value === 'submitted'));
 
         switch (level) {
             case 1: return <Phone />;
