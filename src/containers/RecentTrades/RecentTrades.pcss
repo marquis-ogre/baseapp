@@ -1,6 +1,7 @@
 .cr-table__noData {
     .pg-recent-trades {
         .cr-table td, .cr-table th {
+		padding:0;
             text-align: right;
             &:nth-child(2){
                 text-align: center;
@@ -22,6 +23,8 @@
       cursor: pointer;
     }
     .cr-table td, .cr-table th {
+		padding-top:2px !important;
+		padding-bottom:2px !important;
         text-align: right;
         &:first-child {
             width: 50%;
@@ -38,11 +41,12 @@
         top: calc(var(--gap) * 5.18);
     }
 
-    .cr-table td {           
-        span > span:first-child.cr-decimal__opacity {
-            opacity: 0.6;
-        }
-    }
+    .cr-table {
+		  
+			td {
+			  color:#54B489 !important;
+            }
+	}
 
     .cr-tab-panel {
         &__navigation-container {
@@ -90,6 +94,10 @@
 
 @media (max-width: 1280px) {
     .pg-recent-trades {
+	
+	.cr-table td, .cr-table th {
+	   padding:0;
+	}
         .cr-tab-panel {
             .cr-tab {
                 padding-right: calc(var(--gap) * 1.5);

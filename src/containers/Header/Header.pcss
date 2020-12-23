@@ -12,7 +12,7 @@ header {
 
   &__market-selector-toggle {
     cursor: pointer;
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     padding: 5px 14px;
@@ -38,7 +38,7 @@ header {
     display: none;
   }
 
-  &__navbar {
+&__navbar {
     background: var(--background-dark);
     padding-top: 3px;
     margin-left: 30px;
@@ -50,6 +50,9 @@ header {
 
   &__toolbar {
     display: flex;
+    position:absolute;
+    left:0;
+    margin-left:30%;
     &-item {
       margin-left: 40px;
       display: flex;
@@ -97,7 +100,7 @@ header {
   .pg-container {
     background: var(--background-dark);
     justify-content: flex-start;
-    padding: 0 2%;
+    padding: 0 1%;
     width: 100%;
   }
 }

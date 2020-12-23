@@ -1,3 +1,4 @@
+// import classnames from 'classnames';
 import { History } from 'history';
 import * as React from 'react';
 import {
@@ -5,10 +6,11 @@ import {
     MapDispatchToPropsFunction,
     MapStateToProps,
 } from 'react-redux';
-import { RouteProps, withRouter } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
+import { Link, RouteProps, withRouter } from 'react-router-dom';
 import { Moon } from '../../assets/images/Moon';
 import { Sun } from '../../assets/images/Sun';
-import { colors } from '../../constants';
+import { colors, pgRoutes } from '../../constants';
 import {
     changeColorTheme,
     changeLanguage,
@@ -32,12 +34,13 @@ export interface ReduxProps {
     lang: string;
     success?: boolean;
     user: User;
+	//isActive: boolean;
 }
 
 interface DispatchProps {
     changeColorTheme: typeof changeColorTheme;
     changeLanguage: typeof changeLanguage;
-    logout: typeof logoutFetch;
+    logoutFetch: typeof logoutFetch;
     walletsReset: typeof walletsReset;
 }
 
@@ -71,11 +74,29 @@ class NavBarComponent extends React.Component<NavbarProps, NavbarState> {
     };
 
     public render() {
-        const { colorTheme } = this.props;
+        const { isLoggedIn, colorTheme, /*isActive, lang */} = this.props;
+		const address = this.props.history.location ? this.props.history.location.pathname : '';
+		const isLight = colorTheme === 'light';
+        //const lightBox = isLight ? 'light-box' : '';
+        //const languageName = lang.toUpperCase();
 
         return (
             <div className={'pg-navbar'}>
                 <div className="pg-navbar__header-settings">
+					{/* This custom content 
+					{this.renderProfileLink()}
+					
+					<div>
+						{pgRoutes(isLoggedIn).map(this.renderNavItems(address))}
+					</div>
+					
+					{this.renderLogout()}
+					*/ }
+					{this.renderProfileLink()}
+					<div className="pg-navbar-wrapper-items">
+						{pgRoutes(isLoggedIn, isLight).map(this.renderNavItems(address))}
+					</div>
+					{this.renderLogout()}
                     <div className="pg-navbar__header-settings__switcher">
                         <div
                             className="pg-navbar__header-settings__switcher__items"
@@ -89,6 +110,80 @@ class NavBarComponent extends React.Component<NavbarProps, NavbarState> {
         );
     }
 
+	/* function moved from sidebar to Navbar */
+	public renderNavItems = (address: string) => (values: string[], index: number) => {
+        const { currentMarket } = this.props;
+
+        const [name, url, img] = values;
+        const path = url.includes('/trading') && currentMarket ? `/trading/${currentMarket.id}` : url;
+        const isActive = (url === '/trading/' && address.includes('/trading')) || address === url;
+		/*const iconClassName = classnames('pg-navbar-wrapper-nav-item-img', {
+            'pg-navbar-wrapper-nav-item-img--active': isActive,
+        });*/
+		   
+        return (
+            <Link to={path} key={index} className={`${isActive && 'route-selected'}`}>
+				<div className="pg-navbar-wrapper-items-link">
+                        <img
+                            className="pg-navbar-wrapper-items-link-img"
+                            src={require(`../../assets/images/sidebar/${img}.svg`)}
+                            alt="icon"
+                        />
+                        <p className="pg-navbar-wrapper-items-link-text">
+                            <FormattedMessage id={name} />
+                        </p>
+                </div>
+					
+            </Link>
+        );
+    };
+	
+	public renderProfileLink = () => {
+        const { isLoggedIn, colorTheme, location } = this.props;
+        const isLight = colorTheme === 'light';
+        const address = location ? location.pathname : '';
+        const isActive = address === '/profile';
+
+        return isLoggedIn && (
+            <div className="pg-navbar-wrapper-profile">
+                <Link to="/profile"  className={`${isActive && 'route-selected'}`}>
+                    <div className="pg-navbar-wrapper-profile-link">
+                        <img
+                            className="pg-navbar-wrapper-profile-link-img"
+                            src={require(`../../assets/images/sidebar/profile${isLight ? 'Light' : '' }.svg`)}
+                            alt="icon"
+                        />
+                        <p className="pg-navbar-wrapper-profile-link-text">
+                            <FormattedMessage id={'page.header.navbar.profile'} />
+                        </p>
+                    </div>
+                </Link>
+            </div>
+        );
+    };
+	
+	public renderLogout = () => {
+        const { isLoggedIn, colorTheme } = this.props;
+        const isLight = colorTheme === 'light';
+        if (!isLoggedIn) {
+            return null;
+        }
+
+        return (
+            <div className="pg-navbar-wrapper-logout">
+                <div className="pg-navbar-wrapper-logout-link" onClick={this.props.logoutFetch}>
+                    <img
+                        className="pg-navbar-wrapper-logout-link-img"
+                        src={require(`../../assets/images/sidebar/logout${isLight ? 'Light' : '' }.svg`)}
+                        alt="icon"
+                    />
+                    <p className="pg-navbar-wrapper-logout-link-text">
+                        <FormattedMessage id={'page.body.profile.content.action.logout'} />
+                    </p>
+                </div>
+            </div>
+        );
+    };
     private getLightDarkMode = () => {
         const { colorTheme } = this.props;
 
@@ -136,7 +231,7 @@ const mapDispatchToProps: MapDispatchToPropsFunction<DispatchProps, {}> =
     dispatch => ({
         changeColorTheme: payload => dispatch(changeColorTheme(payload)),
         changeLanguage: payload => dispatch(changeLanguage(payload)),
-        logout: () => dispatch(logoutFetch()),
+        logoutFetch: () => dispatch(logoutFetch()),
         walletsReset: () => dispatch(walletsReset()),
     });
 

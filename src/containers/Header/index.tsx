@@ -9,10 +9,10 @@ import {
     selectCurrentMarket,
     selectMarketSelectorState,
     selectMobileWalletUi,
-    selectSidebarState,
+    //selectSidebarState,
     setMobileWalletUi,
     toggleMarketSelector,
-    toggleSidebar,
+    //toggleSidebar,
 } from '../../modules';
 import { HeaderToolbar } from '../HeaderToolbar';
 import { NavBar } from '../NavBar';
@@ -24,13 +24,13 @@ interface ReduxProps {
     currentMarket: Market | undefined;
     colorTheme: string;
     mobileWallet: string;
-    sidebarOpened: boolean;
+    //sidebarOpened: boolean;
     marketSelectorOpened: boolean;
 }
 
 interface DispatchProps {
     setMobileWalletUi: typeof setMobileWalletUi;
-    toggleSidebar: typeof toggleSidebar;
+    //toggleSidebar: typeof toggleSidebar;
     toggleMarketSelector: typeof toggleMarketSelector;
 }
 
@@ -49,14 +49,14 @@ class Head extends React.Component<any> {
             {!['/confirm'].some(r => location.pathname.includes(r)) &&
                 <header className={`pg-header`}>
                     <div className={`pg-container pg-header__content ${tradingCls}`}>
-                        <div
+                        { /* <div
                             className={`pg-sidebar__toggler ${mobileWallet && 'pg-sidebar__toggler-mobile'}`}
                             onClick={this.openSidebar}
                         >
                             <span className="pg-sidebar__toggler-item"/>
                             <span className="pg-sidebar__toggler-item"/>
                             <span className="pg-sidebar__toggler-item"/>
-                        </div>
+                        </div> */ }
                         <Link to={'/wallets'} className="pg-header__logo">
                             <div className="pg-logo">
                                 {colorTheme === 'light' ? (
@@ -126,7 +126,7 @@ class Head extends React.Component<any> {
         );
     };
 
-    private openSidebar = () => this.props.toggleSidebar(!this.props.sidebarOpened);
+    //private openSidebar = () => this.props.toggleSidebar(!this.props.sidebarOpened);
 
     private backWallets = () => this.props.setMobileWalletUi('');
 
@@ -137,14 +137,14 @@ const mapStateToProps = (state: RootState): ReduxProps => ({
     currentMarket: selectCurrentMarket(state),
     colorTheme: selectCurrentColorTheme(state),
     mobileWallet: selectMobileWalletUi(state),
-    sidebarOpened: selectSidebarState(state),
+    //sidebarOpened: selectSidebarState(state),
     marketSelectorOpened: selectMarketSelectorState(state),
 });
 
 const mapDispatchToProps: MapDispatchToPropsFunction<DispatchProps, {}> =
     dispatch => ({
         setMobileWalletUi: payload => dispatch(setMobileWalletUi(payload)),
-        toggleSidebar: payload => dispatch(toggleSidebar(payload)),
+        //toggleSidebar: payload => dispatch(toggleSidebar(payload)),
         toggleMarketSelector: () => dispatch(toggleMarketSelector()),
     });
 

@@ -49,7 +49,7 @@ const getLayouts = () => {
 
     const currentTradingChartHeight = pixelsToGridUnits(gridHeight - margin * 2 - gridUnitsToPixels(orderHeight, rowHeight, margin), rowHeight, margin);
     const tradingChartHeight = gridHeight >= minGridHeight ?
-        currentTradingChartHeight + margin * 0.6 : Math.floor(Math.max(currentTradingChartHeight, minTradingChartHeight));
+        currentTradingChartHeight + margin * 0.84 : Math.floor(Math.max(currentTradingChartHeight, minTradingChartHeight));
     const openOrdersHeight = gridHeight >= minGridHeight ?
         pixelsToGridUnits(gridHeight - gridUnitsToPixels(tradingChartHeight, rowHeight, margin) - gridUnitsToPixels(minMarketDepthsHeight, rowHeight, margin), rowHeight, margin) + 3 :
         minOpenOrdersHeight;
@@ -68,13 +68,20 @@ const getLayouts = () => {
 
     return {
         lg: [
-            { x: 20, y: 0, w: 4, h: orderHeight, i: '1', minH: orderHeight, maxH: orderHeight, minW: 4, isDraggable: true },
+            /*{ x: 20, y: 0, w: 4, h: orderHeight, i: '1', minH: orderHeight, maxH: orderHeight, minW: 4, isDraggable: true },
             { x: 4, y: 0, w: 12, h: tradingChartHeight, i: '2', minH: minTradingChartHeight, minW: 5, isDraggable: true },
             { x: 16, y: 0, w: 4, h: orderBookHeight, i: '3', minH: minOrderBookHeight, minW: 4, isDraggable: true },
             { x: 4, y: 40, w: 12, h: minMarketDepthsHeight, i: '4', minH: minMarketDepthsHeight, minW: 5, isDraggable: true },
             { x: 4, y: 60, w: 12, h: openOrdersHeight, i: '5', minH: minOpenOrdersHeight, minW: 5, isDraggable: true },
             { x: 0, y: 0, w: 4, h: recentTradesHeight, i: '6', minH: minRecentTradesHeight, minW: 4, isDraggable: true },
-            { x: 20, y: 40, w: 4, h: marketsHeight, i: '7', minH: minMarketsHeight, minW: 4, isDraggable: true },
+            { x: 20, y: 40, w: 4, h: marketsHeight, i: '7', minH: minMarketsHeight, minW: 4, isDraggable: true },*/
+			{ x: 20, y: 20, w: 8, h: orderHeight, i: '1', minH: orderHeight, maxH: orderHeight, minW: 4, isDraggable: true },
+            { x: 4, y: 0, w: 12, h: tradingChartHeight, i: '2', minH: minTradingChartHeight, minW: 5, isDraggable: true },
+            { x: 16, y: 0, w: 4, h: orderBookHeight - 20, i: '3', minH: minOrderBookHeight, minW: 2, isDraggable: true },
+            { x: 4, y: 30, w: 12, h: minMarketDepthsHeight+1.2, i: '4', minH: minMarketDepthsHeight, minW: 3, isDraggable: true },
+            { x: 4, y: 30, w: 12, h: openOrdersHeight, i: '5', minH: minOpenOrdersHeight, minW: 3, isDraggable: true },
+            { x: 20.5, y: 0, w: 4, h: recentTradesHeight - 20, i: '6', minH: minRecentTradesHeight, minW: 2, isDraggable: true },
+			{ x: 0, y: 0, w: 4, h: marketsHeight + 22, i: '7', minH: minMarketsHeight, minW: 4, isDraggable: true },
         ],
         md: [
             { x: 16, y: 18, w: 8, h: orderHeight, i: '1', minH: orderHeight, maxH: orderHeight, minW: 4, isDraggable: true },
