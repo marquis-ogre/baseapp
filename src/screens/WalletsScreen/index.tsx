@@ -292,7 +292,7 @@ class WalletsComponent extends React.Component<Props, WalletsState> {
 
         const { currency } = this.props.wallets[selectedWalletIndex];
         const withdrawRequest = {
-            amount,
+            amount: String(amount),
             currency: currency.toLowerCase(),
             otp: otpCode,
             beneficiary_id: beneficiary.id,
