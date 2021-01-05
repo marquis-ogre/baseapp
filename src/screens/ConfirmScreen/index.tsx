@@ -18,8 +18,8 @@ import {
     User,
 } from '../../modules';
 
-import logo from '../../assets/images/logo.svg';
-import logoLight from '../../assets/images/logoLight.svg';
+import logo from '../../assets/images/logo.png';
+import logoLight from '../../assets/images/logoLight.png';
 
 interface ReduxProps {
     colorTheme: string;

@@ -11,6 +11,9 @@ export * from './HistoryElement';
 export * from './LegalDocuments';
 export * from './MarketDepth';
 export * from './Markets';
+
+export * from './MarketsTable';
+
 export * from './ModalWithdrawConfirmation';
 export * from './ModalWithdrawSubmit';
 export * from './NavBar';

@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { injectIntl } from 'react-intl';
+import { InjectedIntlProps, injectIntl } from 'react-intl';
 import { connect, MapDispatchToPropsFunction } from 'react-redux';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import { History } from 'history';
 import {
     Market,
     RootState,
@@ -17,8 +18,8 @@ import {
 import { HeaderToolbar } from '../HeaderToolbar';
 import { NavBar } from '../NavBar';
 
-import logo from '../../assets/images/logo.svg';
-import logoLight from '../../assets/images/logoLight.svg';
+import logo from '../../assets/images/logo.png';
+import logoLight from '../../assets/images/logoLight.png';
 
 interface ReduxProps {
     currentMarket: Market | undefined;
@@ -34,19 +35,22 @@ interface DispatchProps {
     toggleMarketSelector: typeof toggleMarketSelector;
 }
 
-// tslint:disable no-any jsx-no-multiline-js
-class Head extends React.Component<any> {
+interface HistoryProps {
+    history: History;
+}
+
+type Props = ReduxProps & HistoryProps & DispatchProps & InjectedIntlProps;
+
+// tslint:disable jsx-no-multiline-js
+class Head extends React.Component<Props> {
     public render() {
-        const {
-            colorTheme,
-            location,
-            mobileWallet,
-        } = this.props;
+        const { colorTheme, mobileWallet } = this.props;
         const tradingCls = window.location.pathname.includes('/trading') ? 'pg-container-trading' : '';
+		 const shouldRenderHeader = !['/confirm'].some(r => window.location.pathname.includes(r)) && window.location.pathname !== '/';
 
         return (
             <React.Fragment>
-            {!['/confirm'].some(r => location.pathname.includes(r)) &&
+            {shouldRenderHeader &&
                 <header className={`pg-header`}>
                     <div className={`pg-container pg-header__content ${tradingCls}`}>
                         { /* <div
@@ -57,7 +61,7 @@ class Head extends React.Component<any> {
                             <span className="pg-sidebar__toggler-item"/>
                             <span className="pg-sidebar__toggler-item"/>
                         </div> */ }
-                        <Link to={'/wallets'} className="pg-header__logo">
+                       <div onClick={e => this.redirectToLanding()} className="pg-header__logo">
                             <div className="pg-logo">
                                 {colorTheme === 'light' ? (
                                     <img src={logoLight} className="pg-logo__img" alt="Logo" />
@@ -65,10 +69,10 @@ class Head extends React.Component<any> {
                                     <img src={logo} className="pg-logo__img" alt="Logo" />
                                )}
                             </div>
-                        </Link>
+                        </div>
                         {this.renderMarketToggler()}
                         <div className="pg-header__location">
-                            {mobileWallet ? <span>{mobileWallet}</span> : <span>{location.pathname.split('/')[1]}</span>}
+                            {mobileWallet ? <span>{mobileWallet}</span> : <span>{window.location.pathname.split('/')[1]}</span>}
                         </div>
                         {this.renderMobileWalletNav()}
                         <div className="pg-header__navbar">
@@ -97,8 +101,7 @@ class Head extends React.Component<any> {
     };
 
     private renderMarketToolbar = () => {
-        const { location } = this.props;
-        if (!location.pathname.includes('/trading/')) {
+       if (!window.location.pathname.includes('/trading/')) {
             return null;
         }
 
@@ -106,9 +109,9 @@ class Head extends React.Component<any> {
     };
 
     private renderMarketToggler = () => {
-        const { location, currentMarket, marketSelectorOpened, colorTheme } = this.props;
+        const { currentMarket, marketSelectorOpened, colorTheme } = this.props;
         const isLight = colorTheme === 'light';
-        if (!location.pathname.includes('/trading/')) {
+        if (!window.location.pathname.includes('/trading/')) {
             return null;
         }
 
@@ -126,7 +129,11 @@ class Head extends React.Component<any> {
         );
     };
 
-    //private openSidebar = () => this.props.toggleSidebar(!this.props.sidebarOpened);
+	private redirectToLanding = () => {
+        this.props.history.push('/');
+    }
+    
+	//private openSidebar = () => this.props.toggleSidebar(!this.props.sidebarOpened);
 
     private backWallets = () => this.props.setMobileWalletUi('');
 

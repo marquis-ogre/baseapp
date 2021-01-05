@@ -26,6 +26,7 @@ import {
     EmailVerificationScreen,
     ForgotPasswordScreen,
     HistoryScreen,
+	LandingScreen,
     OrdersTabScreen,
     ProfileScreen,
     ProfileTwoFactorAuthScreen,
@@ -160,6 +161,7 @@ class LayoutComponent extends React.Component<LayoutProps> {
                     <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/accounts/password_reset" component={ChangeForgottenPasswordScreen} />
                     <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/email-verification" component={EmailVerificationScreen} />
                     <Route exact={true} path="/trading/:market?" component={TradingScreen} />
+					<Route exact={true} path="/" component={LandingScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/orders" component={OrdersTabScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/history" component={HistoryScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/confirm" component={ConfirmScreen} />

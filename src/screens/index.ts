@@ -4,6 +4,9 @@ export * from './WalletsScreen';
 export * from './SignInScreen';
 export * from './VerificationScreen';
 export * from './SignUpScreen';
+
+export * from './LandingScreen';
+
 export * from './ProfileScreen';
 export * from './OrdersTabScreen';
 export * from './History';
