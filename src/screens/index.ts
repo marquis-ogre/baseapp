@@ -15,3 +15,7 @@ export * from './ProfileTwoFactorAuthScreen';
 export * from './ForgotPassword';
 export * from './ChangeForgottenPasswordScreen';
 export * from './ConfirmScreen';
+
+/* Static screen and pages */
+export * from './Privacy';
+export * from './Terms';

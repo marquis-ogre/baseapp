@@ -145,16 +145,16 @@ export const ru: LangType = {
     'page.body.landing.startTrading.button1': 'register',
     'page.body.landing.startTrading.button2': 'Start trading',
 
-    'page.body.landing.footer.exchange': 'Exchange',
-    'page.body.landing.footer.wallets': 'Wallets',
-    'page.body.landing.footer.fees': 'Fees',
-    'page.body.landing.footer.faq': 'FAQ',
-    'page.body.landing.footer.support': 'Support',
-    'page.body.landing.footer.privacy': 'Privacy',
-    'page.body.landing.footer.about': 'About us',
-    'page.body.landing.footer.community': 'Community',
-    'page.body.landing.footer.info': 'Info',
-    'page.body.landing.footer.rights': 'Baseapp © All rights reserved.',
+    'page.links.footer.exchange': 'Exchange',
+    'page.links.footer.wallets': 'Wallets',
+    'page.links.footer.fees': 'Fees',
+    'page.links.footer.faq': 'FAQ',
+    'page.links.footer.support': 'Support',
+    'page.links.footer.privacy': 'Privacy',
+    'page.links.footer.about': 'About us',
+    'page.links.footer.community': 'Community',
+    'page.links.footer.info': 'Info',
+    'page.footer.rights': 'Baseapp © All rights reserved.',
 
 
     /* Wallets */
@@ -727,4 +727,13 @@ export const ru: LangType = {
     'server.internal_error': 'Внутренняя ошибка сервера',
 
     ...nationalitiesNames,
+	// privacy page
+	"privacy.heading-top": "Term Of Use",
+	// term page
+	"term.heading-top": "Term Of Use",
+	"term.last-date":"Last Updated: May 11, 2020",
+	"term.p1":"These Terms of Use are the legal binding agreement between BME Technologies OÜ, a legal person incorporated under the laws of Estonia with a registry code 14710805 with a registered address at Harju maakond, Tallinn, Lasnamäe linnaosa, Peterburi tee 47, 11415, its subsidiaries and affiliated parties (the 'Company”) and the users of the website emirex.com (the 'Site'). By using this Site, and further by registering to use our Service, you (the 'Member', 'You', 'Your' or 'Yourself') accept and comply with the terms and conditions governing Your use of the Company’s’ website (the “Site”) and the services offered therein (the 'Terms of Use'). You should read the entire Terms of Use carefully before You use the Site or any of the services offered on the Site (the 'Services')",
+	"term.heading-risk" : "Risks Warning",
+	"term.heading-risk.heading1":"Financial Risks: ",
+	"term.heading-risk.content1": "The trading of goods and products, real or virtual, as well as Virtual Currencies involves significant risks. Prices can fluctuate on any given day. Due to such price fluctuations, You may increase or lose value in Your assets at any given moment. Any assets, digital or not, may be subject to large shifts in value and may even become worthless. There is an inherent risk that losses will occur as a result of buying, selling or trading anything on a market."
 };

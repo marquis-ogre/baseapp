@@ -19,7 +19,7 @@ const FeaturesCustomizeIcon = require('../../assets/images/landing/features/comm
 const TrustWorthySecureIcon = require('../../assets/images/landing/trustyworthy/secure.png');
 const TrustWorthyComplianceIcon = require('../../assets/images/landing/trustyworthy/compliance.png');
 const TrustWorthyUserIcon = require('../../assets/images/landing/trustyworthy/user.png');
-
+/*
 const TelegramIcon = require('../../assets/images/landing/social/Telegram.svg');
 const LinkedInIcon = require('../../assets/images/landing/social/LinkedIn.svg');
 const TwitterIcon = require('../../assets/images/landing/social/Twitter.svg');
@@ -28,7 +28,7 @@ const RedditIcon = require('../../assets/images/landing/social/Reddit.svg');
 const FacebookIcon = require('../../assets/images/landing/social/Facebook.svg');
 const MediumIcon = require('../../assets/images/landing/social/Medium.svg');
 const CoinMarketIcon = require('../../assets/images/landing/social/CoinMarket.svg');
-
+*/
 
 interface ReduxProps {
     isLoggedIn: boolean;
@@ -80,20 +80,29 @@ class Landing extends React.Component<Props> {
 			  <ImageSlider />
 			</div>
 		);
-	}
+    }
+    
+    public renderIntroSliderBlock() {
+        return (
+          <div className="pg-landing-screen__intro-slider">
+            <div className="pg-landing-screen__intro-slider__wrap__title">
+                <h3>{this.translate('page.body.landing.marketInfo.title.text1')}</h3>
+                <h2>{this.translate('page.body.landing.marketInfo.title.text2')}</h2>
+                <Link to="/trading" className="landing-button">
+                {this.translate('page.body.landing.marketInfo.title.button')}
+                </Link>
+             </div>
+                {this.renderSliderBlock()}
+
+        </div>
+         
+        )
+    }
 
     public renderMarketInfoBlock() {
         return (
             <div className="pg-landing-screen__market-info">
                 <div className="pg-landing-screen__market-info__wrap">
-                    <div className="pg-landing-screen__market-info__wrap__title">
-                        <h3>{this.translate('page.body.landing.marketInfo.title.text1')}</h3>
-                        <h2>{this.translate('page.body.landing.marketInfo.title.text2')}</h2>
-							<Link to="/trading" className="landing-button">
-                            {this.translate('page.body.landing.marketInfo.title.button')}
-							</Link>
-                    </div>
-					 {this.renderSliderBlock()}
                      <MarketsTable />
                 </div>
             </div>
@@ -255,55 +264,11 @@ class Landing extends React.Component<Props> {
         );
     }
 
-    public renderFooter() {
-        return (
-            <div className="pg-landing-screen__footer">
-                <div className="pg-landing-screen__footer__wrap">
-                    <div className="pg-landing-screen__footer__wrap__left" onClick={e => this.handleScrollTop()}>
-                        <img src={LogoImage} alt="BaseApp Logo"/>
-                    </div>
-                    <div className="pg-landing-screen__footer__wrap__navigation">
-                        <div className="pg-landing-screen__footer__wrap__navigation__col">
-                            <Link to="/trading/">{this.translate('page.body.landing.footer.exchange')}</Link>
-                            <Link to="/wallets">{this.translate('page.body.landing.footer.wallets')}</Link>
-                            <Link to="/">{this.translate('page.body.landing.footer.fees')}</Link>
-                        </div>
-                        <div className="pg-landing-screen__footer__wrap__navigation__col">
-                            <Link to="/">{this.translate('page.body.landing.footer.faq')}</Link>
-                            <Link to="/">{this.translate('page.body.landing.footer.support')}</Link>
-                            <Link to="/">{this.translate('page.body.landing.footer.privacy')}</Link>
-                        </div>
-                        <div className="pg-landing-screen__footer__wrap__navigation__col">
-                            <Link to="/">{this.translate('page.body.landing.footer.about')}</Link>
-                            <Link to="/">{this.translate('page.body.landing.footer.community')}</Link>
-                            <Link to="/">{this.translate('page.body.landing.footer.info')}</Link>
-                        </div>
-                    </div>
-                    <div className="pg-landing-screen__footer__wrap__social">
-                        <div className="pg-landing-screen__footer__wrap__social__row">
-                            <img src={TelegramIcon} alt="Telegram" />
-                            <img src={LinkedInIcon} alt="LinkedIn" />
-                            <img src={TwitterIcon} alt="Twitter" />
-                            <img src={YouTubeIcon} alt="YouTube" />
-                        </div>
-                        <div className="pg-landing-screen__footer__wrap__social__row">
-                            <img src={RedditIcon} alt="Reddit" />
-                            <img src={FacebookIcon} alt="Facebook" />
-                            <img src={MediumIcon} alt="MediumIcon" />
-                            <img src={CoinMarketIcon} alt="CoinMarket" />
-                        </div>
-                    </div>
-                </div>
-                <span className="pg-landing-screen__footer__rights">{this.translate('page.body.landing.footer.rights')}</span>
-            </div>
-        );
-    }
-
     public render() {
         return (
             <div className="pg-landing-screen">
                 {this.renderHeader()}
-				{/*this.renderSliderBlock()*/}
+                {this.renderIntroSliderBlock()}
                 {this.renderMarketInfoBlock()}
                 {this.renderPlatformInfoBlock()}
                 {this.renderRegisterBlock()}
@@ -311,7 +276,6 @@ class Landing extends React.Component<Props> {
                 {this.renderTradeOnTheGoBlock()}
                 {this.renderTrustWorthyBlock()}
                 {this.renderStartTradingBlock()}
-                {this.renderFooter()}
             </div>
         );
     }

@@ -146,16 +146,16 @@ export const en = {
     'page.body.landing.startTrading.button1': 'register',
     'page.body.landing.startTrading.button2': 'Start trading',
 
-    'page.body.landing.footer.exchange': 'Exchange',
-    'page.body.landing.footer.wallets': 'Wallets',
-    'page.body.landing.footer.fees': 'Fees',
-    'page.body.landing.footer.faq': 'FAQ',
-    'page.body.landing.footer.support': 'Support',
-    'page.body.landing.footer.privacy': 'Privacy',
-    'page.body.landing.footer.about': 'About us',
-    'page.body.landing.footer.community': 'Community',
-    'page.body.landing.footer.info': 'Info',
-    'page.body.landing.footer.rights': 'Baseapp © All rights reserved.',
+    'page.links.footer.exchange': 'Exchange',
+    'page.links.footer.wallets': 'Wallets',
+    'page.links.footer.fees': 'Fees',
+    'page.links.footer.faq': 'FAQ',
+    'page.links.footer.support': 'Support',
+    'page.links.footer.privacy': 'Privacy',
+    'page.links.footer.about': 'About us',
+    'page.links.footer.community': 'Community',
+    'page.links.footer.info': 'Info',
+    'page.footer.rights': 'Baseapp © All rights reserved.',
 
 
     /* Wallets */

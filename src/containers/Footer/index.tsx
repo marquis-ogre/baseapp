@@ -1,8 +1,21 @@
 import * as React from 'react';
-import { RouterProps } from 'react-router';
-import { withRouter } from 'react-router-dom';
+import { InjectedIntlProps, injectIntl } from 'react-intl';
+import { Link, RouteProps, withRouter } from 'react-router-dom';
 
-class FooterComponent extends React.Component<RouterProps> {
+const LogoImage = require('../../assets/images/logo.png');
+
+const TelegramIcon = require('../../assets/images/landing/social/Telegram.svg');
+const LinkedInIcon = require('../../assets/images/landing/social/LinkedIn.svg');
+const TwitterIcon = require('../../assets/images/landing/social/Twitter.svg');
+const YouTubeIcon = require('../../assets/images/landing/social/YouTube.svg');
+const RedditIcon = require('../../assets/images/landing/social/Reddit.svg');
+const FacebookIcon = require('../../assets/images/landing/social/Facebook.svg');
+const MediumIcon = require('../../assets/images/landing/social/Medium.svg');
+const CoinMarketIcon = require('../../assets/images/landing/social/CoinMarket.svg');
+
+type Props =  RouteProps & InjectedIntlProps;
+
+class FooterComponent extends React.Component<Props> {
     public render() {
         if (this.props.history.location.pathname.startsWith('/confirm')) {
             return <React.Fragment />;
@@ -10,6 +23,45 @@ class FooterComponent extends React.Component<RouterProps> {
 
         return (
             <React.Fragment>
+				 <div className="pg-footer__footer">
+                <div className="pg-footer__footer__wrap">
+                    <div className="pg-footer__footer__wrap__left" onClick={e => this.handleScrollTop()}>
+                        <img src={LogoImage} alt="BaseApp Logo"/>
+                    </div>
+                    <div className="pg-footer__footer__wrap__navigation">
+                        <div className="pg-footer__footer__wrap__navigation__col">
+                            <Link to="/trading/">{this.translate('page.links.footer.exchange')}</Link>
+                            <Link to="/wallets">{this.translate('page.links.footer.wallets')}</Link>
+                            <Link to="/">{this.translate('page.links.footer.fees')}</Link>
+                        </div>
+                        <div className="pg-footer__footer__wrap__navigation__col">
+                            <Link to="/">{this.translate('page.links.footer.faq')}</Link>
+                            <Link to="/">{this.translate('page.links.footer.support')}</Link>
+                            <Link to="/">{this.translate('page.links.footer.privacy')}</Link>
+                        </div>
+                        <div className="pg-footer__footer__wrap__navigation__col">
+                            <Link to="/">{this.translate('page.links.footer.about')}</Link>
+                            <Link to="/">{this.translate('page.links.footer.community')}</Link>
+                            <Link to="/">{this.translate('page.links.footer.info')}</Link>
+                        </div>
+                    </div>
+                    <div className="pg-footer__footer__wrap__social">
+                        <div className="pg-footer__footer__wrap__social__row">
+                            <img src={TelegramIcon} alt="Telegram" />
+                            <img src={LinkedInIcon} alt="LinkedIn" />
+                            <img src={TwitterIcon} alt="Twitter" />
+                            <img src={YouTubeIcon} alt="YouTube" />
+                        </div>
+                        <div className="pg-footer__footer__wrap__social__row">
+                            <img src={RedditIcon} alt="Reddit" />
+                            <img src={FacebookIcon} alt="Facebook" />
+                            <img src={MediumIcon} alt="MediumIcon" />
+                            <img src={CoinMarketIcon} alt="CoinMarket" />
+                        </div>
+                    </div>
+                </div>
+                <span className="pg-footer__footer__rights">{this.translate('page.footer.rights')}</span>
+            </div>
                 <footer className="pg-footer">
                     <span>Powered by</span>
                     <a href="https://www.openware.com">openware.com</a>
@@ -17,10 +69,16 @@ class FooterComponent extends React.Component<RouterProps> {
             </React.Fragment>
         );
     }
+	
+	private handleScrollTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    private translate = (key: string) => this.props.intl.formatMessage({id: key});
 }
 
 // tslint:disable-next-line:no-any
-const Footer = withRouter(FooterComponent as any) as any;
+const Footer = withRouter(injectIntl(FooterComponent as any) as any);
 
 export {
     Footer,
