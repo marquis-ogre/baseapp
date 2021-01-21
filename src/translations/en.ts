@@ -152,7 +152,7 @@ export const en = {
     'page.links.footer.wallets': 'Wallets',
     'page.links.footer.fees': 'Fees',
     'page.links.footer.faq': 'FAQ',
-    'page.links.footer.support': 'Support',
+    'page.links.footer.terms': 'Terms',
     'page.links.footer.privacy': 'Privacy',
     'page.links.footer.about': 'About us',
     'page.links.footer.community': 'Community',

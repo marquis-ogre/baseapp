@@ -36,8 +36,8 @@ class FooterComponent extends React.Component<Props> {
                         </div>
                         <div className="pg-footer__footer__wrap__navigation__col">
                             <Link to="/">{this.translate('page.links.footer.faq')}</Link>
-                            <Link to="/">{this.translate('page.links.footer.support')}</Link>
-                            <Link to="/">{this.translate('page.links.footer.privacy')}</Link>
+                            <Link to="/terms">{this.translate('page.links.footer.terms')}</Link>
+                            <Link to="/privacy/">{this.translate('page.links.footer.privacy')}</Link>
                         </div>
                         <div className="pg-footer__footer__wrap__navigation__col">
                             <Link to="/">{this.translate('page.links.footer.about')}</Link>
@@ -47,16 +47,16 @@ class FooterComponent extends React.Component<Props> {
                     </div>
                     <div className="pg-footer__footer__wrap__social">
                         <div className="pg-footer__footer__wrap__social__row">
-                            <img src={TelegramIcon} alt="Telegram" />
-                            <img src={LinkedInIcon} alt="LinkedIn" />
-                            <img src={TwitterIcon} alt="Twitter" />
-                            <img src={YouTubeIcon} alt="YouTube" />
+                            <a href="https://t.me/"><img src={TelegramIcon} alt="Telegram" /></a>
+                            <a href="https://twitter.com/"><img src={LinkedInIcon} alt="LinkedIn" /></a>
+                            <a href="https://in.linkedin.com/"><img src={TwitterIcon} alt="Twitter" /></a>
+                            <a href="https://youtube.com"><img src={YouTubeIcon} alt="YouTube" /></a>
                         </div>
                         <div className="pg-footer__footer__wrap__social__row">
-                            <img src={RedditIcon} alt="Reddit" />
-                            <img src={FacebookIcon} alt="Facebook" />
-                            <img src={MediumIcon} alt="MediumIcon" />
-                            <img src={CoinMarketIcon} alt="CoinMarket" />
+                            <a href="https://reddit.com"><img src={RedditIcon} alt="Reddit" /></a>
+                            <a href="https://facebook.com"><img src={FacebookIcon} alt="Facebook" /></a>
+                            <a href="https://mdeium.com"><img src={MediumIcon} alt="MediumIcon" /></a>
+                            <a href="https://coinmarket.com"><img src={CoinMarketIcon} alt="CoinMarket" /></a>
                         </div>
                     </div>
                 </div>
