@@ -86,10 +86,10 @@ class Landing extends React.Component<Props> {
         return (
           <div className="pg-landing-screen__intro-slider">
             <div className="pg-landing-screen__intro-slider__wrap__title">
-                <h3>{this.translate('page.body.landing.marketInfo.title.text1')}</h3>
-                <h2>{this.translate('page.body.landing.marketInfo.title.text2')}</h2>
+                <h3>{this.translate('page.body.intro.slider.title.text1')}</h3>
+                <h2>{this.translate('page.body.intro.slider.title.text2')}</h2>
                 <Link to="/trading" className="landing-button">
-                {this.translate('page.body.landing.marketInfo.title.button')}
+                {this.translate('page.body.intro.slider.title.button')}
                 </Link>
              </div>
                 {this.renderSliderBlock()}
@@ -103,6 +103,7 @@ class Landing extends React.Component<Props> {
         return (
             <div className="pg-landing-screen__market-info">
                 <div className="pg-landing-screen__market-info__wrap">
+                <h3>{this.translate('page.body.landing.marketInfo.title.text1')}</h3>
                      <MarketsTable />
                 </div>
             </div>

@@ -91,9 +91,11 @@ export const en = {
     'page.body.landing.header.button2': 'log in',
     'page.body.landing.header.button3': 'register',
 
-    'page.body.landing.marketInfo.title.text1': 'The Global Digital Coin Exchange',
-    'page.body.landing.marketInfo.title.text2': 'Where Innovative Digital Assets Gather',
-    'page.body.landing.marketInfo.title.button': 'start trading',
+    'page.body.intro.slider.title.text1': 'Welcome to Baseapp.',
+    'page.body.intro.slider.title.text2': 'Buy, sell and trade digital currency.',
+    'page.body.intro.slider.title.button': 'start trading',
+
+    'page.body.landing.marketInfo.title.text1': 'Markets',
 
     'page.body.landing.platformInfo.item.first.value': '30M+',
     'page.body.landing.platformInfo.item.first.title': 'Customers served',
