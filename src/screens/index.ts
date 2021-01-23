@@ -19,3 +19,4 @@ export * from './ConfirmScreen';
 /* Static screen and pages */
 export * from './Privacy';
 export * from './Terms';
+export * from './About';

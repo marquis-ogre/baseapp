@@ -782,7 +782,6 @@ export const ru: LangType = {
 	"privacy.title-9.content-1": "If you have any questions, feedback specifically regarding our Privacy Policy, please do not hesitate to contact us atsupport@KoinMudra.com.",
     
   
-	//Terms Page
     //Terms Page
     "terms.heading-top": "Terms of Service",
     "terms.last-date":"Last Updated: May 11, 2020", 
@@ -847,7 +846,6 @@ export const ru: LangType = {
     "terms.title-11.content-6": "11.2.2. To be responsible for any negative balance in your account(s) on the Site.",
     "terms.title-11.content-7": "11.2.3. To be fully responsible for safeguarding access to, and any information provided through, the Site and any of the Services, including, but not limited to, private keys, usernames, passwords. Any loss or compromise of the information and/or your personal information may result in unauthorized access to your KoinMudra account by third-parties and the loss or theft of any Digital Currency and/or funds held in your KoinMudra account. You are accountable for keeping your email address and telephone number current in your account profile in order to receive any announcements or alerts that KoinMudra may send you. KoinMudra assumes no accountability for any loss that you might bear due to compromise of account login credentials and/or failure to follow or act on any announcements or alerts that KoinMudra may send to you. In the event you believe your KoinMudra account information has been compromised, contact KoinMudra‘s Support immediately at support@KoinMudra.com.",
     "terms.title-11.content-8": "11.3. There is no assurance against losses on the Site. KoinMudra cannot assure the stop of losses even with the ability to force-liquidate any of your positions (due to, for instance, market volatility and liquidity). KoinMudra will not be and is not accountable for any other party on the Site.",
-
 
     "terms.title-12.heading" : "12.	AGENCY",
     "terms.title-12.content-1": "12.1. KoinMudra does not act as principal, counterparty, or market-maker in the transactions effected through trading on KoinMudra. However, you hereby grant KoinMudra agency, and you allow and instruct KoinMudra: to implement, charge, monitor, and maintain a right to keep possession on all Digital Currencies in your name or control on the Site; and, to liquidate any Digital Currencies in your name or control on the Site if essential to ensure that any Services you have obtained on the Site are paid for in full.",
@@ -929,5 +927,15 @@ export const ru: LangType = {
     "terms.title-25.heading" : "25.	SURVIVAL",
     "terms.title-25.content-1": "25.1. All provisions of these Terms of Service which by their nature extend beyond the expiration or termination of these Terms of Service, including, without limitation, sections relating to suspension or termination, KoinMudra‘s account cancellation, debts owed to KoinMudra, general use of the Site, disputes with KoinMudra, and general provisions, shall survive the termination or expiration of these Terms of Service.",
 
+    // Abous Us Page
+    "about.heading-top": "About Us",
+	"about.last-date":"Last Updated: Jan 24, 2021", 
+	"about.content-1":"We believe in the power of Digital Assets and their ability to make this world a place with more economic freedom through public, open, fair, censorship-resistant networks that serve humanity.",
+	"about.content-2":"As long-term residents of the Middle East, we have noticed a real lack of access to the Digital Assets in the Region. So, in early 2017, we set out to change this and started working on BitMeEx - Bitcoin Middle East Exchange, a platform that is easy to use and that offers access to many Digital Assets in exchange for international and local fiat currency. In 2019, we have rolled out the next stage in the technology roll-out a professional trading platform.",
+	"about.content-3":"We have also rebranded to Emirex.com, which reflects our roots and our expansion plans.",
+	"about.content-4":"We aim to grow our platform further and have built an ambitious road-map ahead of us, developing multi-level trading and supporting services with an individual approach to each customer, from beginners to institutional traders. We are on track to achieve a Regional coverage with multiple payment options, always maintaining 24/7 support accompanied by time-proven platform stability that guarantees the safety of assets and data.",
+	"about.content-5":"Every day we strive to improve our services to provide the best customer experience and the best service possible.",
+	"about.content-6":"We welcome you to join our community!",
+	"about.content-7":"Team KOINMUDRA",
 
 };

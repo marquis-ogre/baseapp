@@ -36,7 +36,8 @@ import {
     VerificationScreen,
     WalletsScreen,
 	PrivacyScreen,
-	TermsScreen,
+    TermsScreen,
+    AboutScreen,
 } from '../../screens';
 
 interface ReduxProps {
@@ -163,9 +164,10 @@ class LayoutComponent extends React.Component<LayoutProps> {
                     <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/accounts/password_reset" component={ChangeForgottenPasswordScreen} />
                     <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/email-verification" component={EmailVerificationScreen} />
                     <Route exact={true} path="/trading/:market?" component={TradingScreen} />
-					<Route exact={true} path="/" component={LandingScreen} />
-					<Route exact={true} path="/privacy" component={PrivacyScreen} />
-					<Route exact={true} path="/terms" component={TermsScreen} />
+                    <Route exact={true} path="/" component={LandingScreen} />
+                    <Route exact={true} path="/privacy" component={PrivacyScreen} />
+                    <Route exact={true} path="/terms" component={TermsScreen} />
+                    <Route exact={true} path="/about" component={AboutScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/orders" component={OrdersTabScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/history" component={HistoryScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/confirm" component={ConfirmScreen} />

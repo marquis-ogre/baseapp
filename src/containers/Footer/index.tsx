@@ -40,7 +40,7 @@ class FooterComponent extends React.Component<Props> {
                             <Link to="/privacy/">{this.translate('page.links.footer.privacy')}</Link>
                         </div>
                         <div className="pg-footer__footer__wrap__navigation__col">
-                            <Link to="/">{this.translate('page.links.footer.about')}</Link>
+                            <Link to="/about/">{this.translate('page.links.footer.about')}</Link>
                             <Link to="/">{this.translate('page.links.footer.community')}</Link>
                             <Link to="/">{this.translate('page.links.footer.info')}</Link>
                         </div>

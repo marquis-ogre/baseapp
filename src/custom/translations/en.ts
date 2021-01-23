@@ -199,6 +199,15 @@ export const en = {
     "terms.title-25.heading" : "25.	SURVIVAL",
 	"terms.title-25.content-1": "25.1. All provisions of these Terms of Service which by their nature extend beyond the expiration or termination of these Terms of Service, including, without limitation, sections relating to suspension or termination, KoinMudra‘s account cancellation, debts owed to KoinMudra, general use of the Site, disputes with KoinMudra, and general provisions, shall survive the termination or expiration of these Terms of Service.",
 
-
+	// Abous Us Page
+	"about.heading-top": "About Us",
+	"about.last-date":"Last Updated: Jan 24, 2021", 
+	"about.content-1":"We believe in the power of Digital Assets and their ability to make this world a place with more economic freedom through public, open, fair, censorship-resistant networks that serve humanity.",
+	"about.content-2":"As long-term residents of the Middle East, we have noticed a real lack of access to the Digital Assets in the Region. So, in early 2017, we set out to change this and started working on BitMeEx - Bitcoin Middle East Exchange, a platform that is easy to use and that offers access to many Digital Assets in exchange for international and local fiat currency. In 2019, we have rolled out the next stage in the technology roll-out a professional trading platform.",
+	"about.content-3":"We have also rebranded to Emirex.com, which reflects our roots and our expansion plans.",
+	"about.content-4":"We aim to grow our platform further and have built an ambitious road-map ahead of us, developing multi-level trading and supporting services with an individual approach to each customer, from beginners to institutional traders. We are on track to achieve a Regional coverage with multiple payment options, always maintaining 24/7 support accompanied by time-proven platform stability that guarantees the safety of assets and data.",
+	"about.content-5":"Every day we strive to improve our services to provide the best customer experience and the best service possible.",
+	"about.content-6":"We welcome you to join our community!",
+	"about.content-7":"Team KOINMUDRA",
 
 };
