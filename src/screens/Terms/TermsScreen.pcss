@@ -11,40 +11,75 @@
 .wrapper {
    max-width: 1040px;
    margin: 0px auto;
-   color: #000;
-   
-   .date {
-	font-size:14px;
-	font-weight: bold;
-	border:1px solid red;
-}
+   color: var(--bright); 
 
-	.paragraph {
-		display: inline;
-		padding-bottom: 10px;
+	.subhead {
+		align-items: center;
+    text-align: center;
+    display: inline;
 		padding-left: 0;
 		padding-right: 0;
 		padding-top: 10px;
-		font-size:14px;
+    padding-bottom: 10px;
+		font-size:16px;
 	}
+   
+.h1 {
+    align-items: center;
+    color: var(--bright);
+    display: flex;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 56px;
+    margin-block-end: 0;
+    margin-block-start: 0;
+    margin-inline-end: 0;
+    margin-inline-start: 0;
+    margin: 0;
+    text-align: center;
+  }
 
-	.text-bold {
-	 font-size:14px;
-	 font-weight: bold;
-	}
-	.headingBold22 {
-	 font-size:21px;
-	 font-weight: bold;
-	}
-	.headingBold15 {
-	 font-size:15px;
-	 font-weight: bold;
-	}
+.h2 {
+    align-items: center;
+    color: var(--bright);
+    display: flex;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.25px;
+    line-height: 20px;
+    margin-block-end: 0;
+    margin-block-start: 0;
+    margin-inline-end: 0;
+    margin-inline-start: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+.h3 {
+    align-items: center;
+    color: var(--bright);
+    display: flex;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.02em;
+    line-height: 18px;
+    margin-block-end: 0;
+    margin-block-start: 0;
+    margin-inline-end: 0;
+    margin-inline-start: 0;
+    margin: 20px;
+    text-align: left;
+  }
+
 } 
 }
 @media screen and (max-width: 768px) {
-  .pg-term-screen {
-    .pg-term-screen__container {
+  .pg-terms-screen {
+    .pg-terms-screen__container {
       margin: calc(var(--gap) * 3.33) calc(var(--gap) * 1.66) 0;
       width: 100%;
     }
