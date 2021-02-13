@@ -91,8 +91,8 @@ export const en = {
     'page.body.landing.header.button2': 'log in',
     'page.body.landing.header.button3': 'register',
 
-    'page.body.intro.slider.title.text1': 'Welcome to Baseapp.',
-    'page.body.intro.slider.title.text2': 'Buy, sell and trade digital currency.',
+    'page.body.intro.slider.title.text1': 'Welcome to PythonEx.',
+    'page.body.intro.slider.title.text2': 'Buy, Sell & Trade Digital Currencies "No TradeFee"',
     'page.body.intro.slider.title.button': 'start trading',
 
     'page.body.landing.marketInfo.title.text1': 'Markets',
@@ -107,7 +107,7 @@ export const en = {
     'page.body.landing.platformInfo.item.fourth.title': 'Countries supported',
 
     'page.body.landing.register.item.title': 'No matter your experience level',
-    'page.body.landing.register.item.text': 'Baseapp offers an intuitive interface with real time orderbooks, charting tools, trade history, and a simple order process so you can trade from day one.',
+    'page.body.landing.register.item.text': 'PythonEx offers an intuitive interface with real time orderbooks, charting tools, trade history, and a simple order process so you can trade from day one.',
     'page.body.landing.register.item.button': 'register',
 
     'page.body.landing.features.title': 'We Serve, Timely',
@@ -118,7 +118,7 @@ export const en = {
     'page.body.landing.features.features.item5.title': 'Community',
     'page.body.landing.features.features.item6.title': 'Industry leading API',
     'page.body.landing.features.features.item1.text': 'Got a problem? No worries. Our expert team is available around the clock through online support, emails and Requests.',
-    'page.body.landing.features.features.item2.text': 'By joining in CoinEx Ambassador Team, our Ambassadors can deeply involve in the exchanges marketing operations and make joint efforts to create a global business ecosystem.',
+    'page.body.landing.features.features.item2.text': 'By joining in PythonEx Ambassador Team, our Ambassadors can deeply involve in the exchanges marketing operations and make joint efforts to create a global business ecosystem.',
     'page.body.landing.features.features.item3.text': 'Join our worldwide communities to exchange ideas with cryptocurrency enthusiasts all over the world.',
     'page.body.landing.features.features.item4.text': 'Security of user information and funds is our first priority. Contact us to learn more about our security features and integrations.',
     'page.body.landing.features.features.item5.text': 'Join a global community that believes in the power of crypto.',
@@ -127,7 +127,7 @@ export const en = {
     'page.body.landing.tradeOnTheGo.item.title': 'You Trade, Freely',
     'page.body.landing.tradeOnTheGo.item.text1': 'Our platform is optimized for trading on any device.',
     'page.body.landing.tradeOnTheGo.item.text2': 'And you don’t need to download any additional applications.',
-    'page.body.landing.tradeOnTheGo.item.text3': 'All the power of Baseapp cryptocurrency exchange, in the palm of your hand.',
+    'page.body.landing.tradeOnTheGo.item.text3': 'All the power of PythonEx cryptocurrency exchange, in the palm of your hand.',
     'page.body.landing.tradeOnTheGo.item.button': 'let’s try',
 
     'page.body.landing.trustworthy.title': 'Why Are We Trustworthy?',
@@ -144,7 +144,7 @@ export const en = {
     'page.body.landing.trustworthy.trustworthy.item5.text': 'Join a global community that believes in the power of crypto.',
     'page.body.landing.trustworthy.trustworthy.item6.text': 'Our Websocket feed lets you easily gain access to real-time market data, while our trading API lets you develop secure, programmatic trading bots.',
 
-    'page.body.landing.startTrading.title': 'Explore The Crypto World With CoinEx',
+    'page.body.landing.startTrading.title': 'Explore The Crypto World With PythonEx',
     'page.body.landing.startTrading.button1': 'register',
     'page.body.landing.startTrading.button2': 'Start trading',
 
@@ -157,7 +157,7 @@ export const en = {
     'page.links.footer.about': 'About us',
     'page.links.footer.community': 'Community',
     'page.links.footer.info': 'Info',
-    'page.footer.rights': 'Baseapp © All rights reserved.',
+    'page.footer.rights': 'PythonEx © All rights reserved.',
 
 
     /* Wallets */

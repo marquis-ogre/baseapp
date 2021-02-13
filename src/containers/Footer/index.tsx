@@ -2,7 +2,7 @@ import * as React from 'react';
 import { InjectedIntlProps, injectIntl } from 'react-intl';
 import { Link, RouteProps, withRouter } from 'react-router-dom';
 
-const LogoImage = require('../../assets/images/logo.png');
+const LogoImage = require('../../assets/images/logo.svg');
 
 const TelegramIcon = require('../../assets/images/landing/social/Telegram.svg');
 const LinkedInIcon = require('../../assets/images/landing/social/LinkedIn.svg');
@@ -26,7 +26,7 @@ class FooterComponent extends React.Component<Props> {
 				 <div className="pg-footer__footer">
                 <div className="pg-footer__footer__wrap">
                     <div className="pg-footer__footer__wrap__left" onClick={e => this.handleScrollTop()}>
-                        <img src={LogoImage} alt="BaseApp Logo"/>
+                        <img src={LogoImage} alt="PythonEx Logo"/>
                     </div>
                     <div className="pg-footer__footer__wrap__navigation">
                         <div className="pg-footer__footer__wrap__navigation__col">

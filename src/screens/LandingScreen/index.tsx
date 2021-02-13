@@ -6,12 +6,14 @@ import { MarketsTable } from '../../containers';
 import {
     RootState,
     selectUserLoggedIn,
+    selectCurrentColorTheme,
 } from '../../modules';
 
 import ImageSlider from "../../containers/Slider/Slider";
 
 
-const LogoImage = require('../../assets/images/logo.png');
+const LogoImage = require('../../assets/images/logo.svg');
+const logoLight = require('../../assets/images/logoLight.svg');
 const FeaturesExchangeIcon = require('../../assets/images/landing/features/support.png');
 const FeaturesTypesIcon = require('../../assets/images/landing/features/ambassador.png');
 const FeaturesCustomizeIcon = require('../../assets/images/landing/features/community.png');
@@ -32,18 +34,26 @@ const CoinMarketIcon = require('../../assets/images/landing/social/CoinMarket.sv
 
 interface ReduxProps {
     isLoggedIn: boolean;
+    colorTheme: string;
 }
 
 type Props = ReduxProps & RouteProps & InjectedIntlProps;
 
 class Landing extends React.Component<Props> {
     public renderHeader() {
+        const { colorTheme } = this.props;
+
         if (this.props.isLoggedIn) {
             return (
                 <div className="pg-landing-screen__header">
                     <div className="pg-landing-screen__header__wrap">
                         <div className="pg-landing-screen__header__wrap__left" onClick={e => this.handleScrollTop()}>
-                            <img src={LogoImage} alt="Logo" />
+                            {/* <img src={LogoImage} alt="Logo" /> */}
+                            {colorTheme === 'light' ? (
+                                    <img src={logoLight} className="pg-logo__img" alt="Logo" />
+                                ) : (
+                                    <img src={LogoImage} className="pg-logo__img" alt="Logo" />
+                               )}
                         </div>
                         <div className="pg-landing-screen__header__wrap__right">
                             <Link to="/profile" className="landing-button">
@@ -290,6 +300,7 @@ class Landing extends React.Component<Props> {
 
 const mapStateToProps = (state: RootState): ReduxProps => ({
     isLoggedIn: selectUserLoggedIn(state),
+    colorTheme: selectCurrentColorTheme(state),
 });
 
 // tslint:disable no-any
