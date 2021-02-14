@@ -1,8 +1,13 @@
 import * as React from 'react';
 import { InjectedIntlProps, injectIntl } from 'react-intl';
 import { Link, RouteProps, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import {
+    selectCurrentColorTheme,
+} from '../../modules';
 
 const LogoImage = require('../../assets/images/logo.svg');
+const LogoLight = require('../../assets/images/logoLight.svg');
 
 const TelegramIcon = require('../../assets/images/landing/social/Telegram.svg');
 const LinkedInIcon = require('../../assets/images/landing/social/LinkedIn.svg');
@@ -13,10 +18,14 @@ const FacebookIcon = require('../../assets/images/landing/social/Facebook.svg');
 const MediumIcon = require('../../assets/images/landing/social/Medium.svg');
 const CoinMarketIcon = require('../../assets/images/landing/social/CoinMarket.svg');
 
-type Props =  RouteProps & InjectedIntlProps;
+interface ReduxProps {
+    colorTheme: string;
+}
+type Props = ReduxProps & RouteProps & InjectedIntlProps;
 
 class FooterComponent extends React.Component<Props> {
     public render() {
+        const { colorTheme} = this.props;
         if (this.props.history.location.pathname.startsWith('/confirm')) {
             return <React.Fragment />;
         }
@@ -26,7 +35,12 @@ class FooterComponent extends React.Component<Props> {
 				 <div className="pg-footer__footer">
                 <div className="pg-footer__footer__wrap">
                     <div className="pg-footer__footer__wrap__left" onClick={e => this.handleScrollTop()}>
-                        <img src={LogoImage} alt="PythonEx Logo"/>
+                        {/* <img src={LogoImage} alt="PythonEx Logo"/> */}
+                         {colorTheme === 'light' ? (
+                                    <img src={LogoLight} className="pg-logo__img" alt="Logo" />
+                                ) : (
+                                    <img src={LogoImage} className="pg-logo__img" alt="Logo" />
+                               )}
                     </div>
                     <div className="pg-footer__footer__wrap__navigation">
                         <div className="pg-footer__footer__wrap__navigation__col">
@@ -76,9 +90,11 @@ class FooterComponent extends React.Component<Props> {
 
     private translate = (key: string) => this.props.intl.formatMessage({id: key});
 }
-
+const mapStateToProps = (state): ReduxProps => ({
+    colorTheme: selectCurrentColorTheme(state),
+});
 // tslint:disable-next-line:no-any
-const Footer = withRouter(injectIntl(FooterComponent as any) as any);
+const Footer = withRouter(injectIntl(connect(mapStateToProps, null)(FooterComponent as any) as any));
 
 export {
     Footer,

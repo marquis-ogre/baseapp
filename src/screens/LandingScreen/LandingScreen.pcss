@@ -121,7 +121,7 @@
   }
 
   &__header {
-    background: var(--back-bg);
+    background: var(--dark-bg);
     height: 64px;
     position: fixed;
     top: 0;
@@ -160,7 +160,7 @@
     background-repeat: no-repeat;
     background-size: unset;
     background: url(assets/images/landing/GridMainBG.svg);
-    background-color: var(--back-bg);
+    background-color: var(--dark-bg);
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -180,6 +180,7 @@
       &__title {
         align-items: center;
         display: flex;
+        color: var(--contrast-text-WB) !important;
         flex-direction: column;
         height: 100%;
         justify-content: center;
@@ -198,6 +199,7 @@
     background-position: right center;
     background-repeat: no-repeat;
     background-size: unset;
+    background-color: var(--dark-bg) !important;
     background: url(assets/images/landing/GridMainBG.svg);
     display: flex;
     flex-direction: column;
@@ -254,7 +256,7 @@
         justify-content: center;
 
         span {
-          color: var(--bright);
+          color: var(--white);
           font-style: normal;
           text-align: center;
   
@@ -282,7 +284,7 @@
     background-position: left;
     background-repeat: no-repeat;
     background-size: contain;
-    background-color: var(--bright);
+    background-color: var(--grey);
     background-image: url(assets/images/landing/bg1.png);
 
     &__wrap {
@@ -334,7 +336,7 @@
   }
 
   &__features {
-    background: var(--bright);
+    background: var(--grey);
 
     &__wrap {
       margin: 50px 0 50px 0;
@@ -366,7 +368,7 @@
         &__item {
           align-items: flex-start;
           border-radius: 4px;
-          background: var(--bright);
+          background: var(--grey);
           border: 0px solid var(--light-item-border);
           display: flex;
           flex-direction: column;
@@ -527,7 +529,7 @@
     }
   }
   &__start-trading {
-    background: var(--back-bg);
+    background: var(--light-bg);
     border-bottom: 2px dotted var(--background-dropdown);
 
     &__wrap {
@@ -535,7 +537,7 @@
       max-width: 1850px;
 
       h1 {
-        color: var(--bright);
+        color: var(--contrast-text-BW);
         font-size: 24px !important;
         padding-right: 950px;
 
